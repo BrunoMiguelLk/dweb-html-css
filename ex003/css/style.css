@@ -1,13 +1,16 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family:Cristo ;
+    src: url(../fonts/cristo_rey/);
+}
 :root {
     --cor1:#223740;
     --cor2:#182120;
     --cor3:#D9C39A;
     --cor4:#A68965;
     --cor5:#dd1518;
-
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -15,28 +18,53 @@
 }
 
 header {
-    height: 50px; /* Essa propriedade altera a altura */
     background-color: var(--cor5);
+    height: 70px;
     display: flex;
     flex-direction: row;/* Define a direção se é em linha ou coluna */
-    padding: 0 15px 0 15px;
+    position: relative;
+}
 
+
+
+    
+#header {
+    display: flex;
+    width: 1500px;
+    max-width: 1500px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 #logo {
-    width: 150px;
-    height: 100%;
+    width: 300px;
     color: black;/* Define a cor da fonte ods textos */
-    font-size: 30px;/* Define o tamanho da fonte */
+    font-size: 26px;/* Define o tamanho da fonte */
     text-transform: uppercase;/* Colocar em letras maiusculas */
     display: flex;/* Torna os itens internos em flexiveis */
     align-items: center;/* Alinha os itens no centro */
 }
 
 #logo img {
-    width: 40px;
+    width: 60px;
 }
 
+#logo p {
+    margin-left: 10px;
+}
+
+#botao-menu {
+    display: none;
+}
+
+label[for='botao-menu'] {
+    color: black;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    left: 20px;
+}
 nav {
     display: flex;
     margin-left: auto;
@@ -45,9 +73,9 @@ nav {
 a {
     text-decoration: none;
     text-transform: uppercase;
-    background-color:#182120;
     color: white;
-    height: 100%;
+    background-color: #000000;
+    height: 70px;
     width: 105px;
     display: flex;
     align-items: center;/*  Centraliza na vertical */
@@ -57,6 +85,112 @@ a {
 
 a:hover {
     background-color: var(--cor5);
+}
+figure {
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    background-image: url("../imagens/pexels-dmitry-zvolskiy-1570806.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.text-figure-small {
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#text-figure-1 {
+    border-bottom: 1px solid white;
+    padding: 0 25px 0 25px;
+    text-align: center;
+}
+
+#text-figure-2 {
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 72px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+    text-align: center;
+    font-family: Cristo; 
+}
+
+main {
+    position: relative;
+    width: 90%;
+    max-width: 1500px;
+    height: 500px;;
+    margin: 0 auto 50px auto;
+    border: 1px solid black;
+  
+ /*    box-shadow: 3px 3px 10px solid rgb(0, 0, 0, 0.3);  */
+}
+
+/* Posotioon::
+
+Static
+Relative
+Absolute
+Fixed
+
+*/
+
+main > div {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    bottom:50px;
+    left: 100px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+footer {
+    background-color: #000000;
+    height: 350px;
+}
+
+@media (max-width: 930px) {
+    nav {
+      /*   display: none;  */
+    }
+    label[for='botao-menu'] {
+         display: block;
+    }
+    nav {
+        flex-direction: column;
+        position: absolute;
+        width: 90%;
+        top: 100%;
+        margin-top: -200%;
+        transition: all 2s;
+    }
+
+    a {
+        width: 100%;
+        background-color: #d81620;
+
+    }
+
+    label[for='botao-menu'] {
+        display:block ;
+    }
+
+    #botao-menu:checked ~ nav {
+        margin-top: 0%;
+    }
+   
 }
 
 
