@@ -1,11 +1,19 @@
-function Ação1() {
-    area.innerHTML = 'Voce clicou no Ação 1!'
+function acao1() {
+    saida.innerHTML += '<p>Voce clicou no primeiro botão.</p>'
 }
 
-function Ação2() {
-    area.innerHTML = `Voce clicou no Ação 2!`
+function acao2() {
+    saida.innerHTML += '<p>Voce clicou no segundo botão.</p>'
 }
 
-function Ação3() {
-    area.innerHTML = 'Voce clicou no Ação 3!'
+function acao3() {
+    saida.innerHTML += '<p>Voce clicou no terceiro botão.</p>'
+}
+
+function acao4() {
+    saida.innerHTML += '<p>Voce clicou no quarto botão.</p>'
+}
+
+function limpar() {
+    saida.innerHTML = ''
 }
